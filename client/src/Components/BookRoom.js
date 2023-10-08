@@ -47,16 +47,16 @@ class BookRoom extends Component {
 
     console.log(newBooking);
     axios
-      .post("http://localhost:5000/online-booking/book-room", newBooking)
-      .then((res) => {
-        console.log("data: " + res);
+      .post("http://localhost:5000/online-booking/book-room", newBooking, {
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
       .catch((error) => {
         console.log("post: " + error);
         console.error();
       });
-
-    // window.location.reload(true);
+    window.location.reload(true);
   }
 
   handleFormDataChange(e) {
