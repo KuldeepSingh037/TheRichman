@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Navigationbar from "./Navigationbar";
+import axios from "axios";
 
 class BookRoom extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class BookRoom extends Component {
       start_date: new Date(),
       end_date: new Date(),
       name: "",
-      room_type: 0,
+      room_type: 1,
       no_of_rooms: "",
       mb_no: "",
     };
@@ -33,15 +34,28 @@ class BookRoom extends Component {
   }
 
   handleFormSubmission(e) {
-    e.preventdefault();
-    console.log(
-      this.state.name,
-      this.state.no_of_rooms,
-      this.state.room_type,
-      this.state.mb_no
-    );
+    e.preventDefault();
 
-    window.location.reload(true);
+    const newBooking = {
+      name: this.state.name,
+      room_type: this.state.room_type,
+      no_of_rooms: this.state.no_of_rooms,
+      mb_no: this.state.mb_no,
+      start_date: this.state.start_date,
+      end_date: this.state.end_date,
+    };
+
+    console.log(newBooking);
+    axios
+      .post("https://localhost:5000/online-booking/book-room", newBooking)
+      .then((res) => {
+        console.log("sadasd" + res);
+      })
+      .catch((err) => {
+        console.log("Error occured in post request: " + err);
+      });
+
+    // window.location.reload(true);
   }
 
   handleFormDataChange(e) {
@@ -85,6 +99,7 @@ class BookRoom extends Component {
                     placeholder="Booking Name"
                     value={this.state.name}
                     className="form-control"
+                    required
                   />
                   <br />
                   <select
@@ -92,6 +107,7 @@ class BookRoom extends Component {
                     onChange={this.handleFormDataChange}
                     name="room_type"
                     className="form-control"
+                    required
                   >
                     <option value="1">
                       Premier Room with Garden ViewLeanne Graham
@@ -113,7 +129,9 @@ class BookRoom extends Component {
                     onChange={this.handleFormDataChange}
                     value={this.state.no_of_rooms}
                     className="form-control"
-                    maxLength="2"
+                    // maxLength="2"
+                    // minLength="1"
+                    required
                   />
                   <br />
                   <input
@@ -123,8 +141,9 @@ class BookRoom extends Component {
                     onChange={this.handleFormDataChange}
                     value={this.state.mb_no}
                     className="form-control"
-                    maxLength="10"
-                    minLength="10"
+                    // maxLength="10"
+                    // minLength="10"
+                    required
                   />
                   <br />
                   <button

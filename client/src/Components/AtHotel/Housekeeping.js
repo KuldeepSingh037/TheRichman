@@ -1,5 +1,4 @@
 import { React, Component } from "react";
-import Container from "react-bootstrap/esm/Container";
 
 import TabPane from "react-bootstrap/TabPane";
 import TabContainer from "react-bootstrap/TabContainer";
