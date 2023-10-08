@@ -1,0 +1,14 @@
+.nav-main {
+  /* background-color: transparent; */
+  /* position: absolute; */
+}
+.nav-mid {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+}
+.nav-right {
+  font-family: "Times New Roman", Times, serif;
+  font-size: xx-large;
+  font-style: oblique;
+}

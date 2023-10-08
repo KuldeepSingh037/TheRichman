@@ -1,0 +1,21 @@
+.book-room-main {
+  font-size: larger;
+  height: 794px;
+  border: 1px solid black;
+}
+.book-room-details {
+  width: 1000px;
+  /* border: 1px solid black; */
+}
+.book-room-date-range {
+  width: 333px;
+  font-family: "Times New Roman";
+  border: 1px solid black;
+}
+.book-room-pd {
+  /* border: 1px solid black; */
+}
+.book-room-form {
+  margin-top: 50px;
+  /* border: 1px solid black; */
+}
