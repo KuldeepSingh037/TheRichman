@@ -1,4 +1,5 @@
 import { React, Component } from "react";
+import axios from "axios";
 
 import "./css/BookRoom.css";
 import "react-date-range/dist/styles.css"; // main style file
@@ -8,18 +9,17 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Navigationbar from "./Navigationbar";
-import axios from "axios";
 
 class BookRoom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      start_date: new Date(),
-      end_date: new Date(),
       name: "",
       room_type: 1,
       no_of_rooms: "",
       mb_no: "",
+      start_date: new Date(),
+      end_date: new Date(),
     };
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleFormDataChange = this.handleFormDataChange.bind(this);
@@ -47,12 +47,13 @@ class BookRoom extends Component {
 
     console.log(newBooking);
     axios
-      .post("https://localhost:5000/online-booking/book-room", newBooking)
+      .post("http://localhost:5000/online-booking/book-room", newBooking)
       .then((res) => {
-        console.log("sadasd" + res);
+        console.log("data: " + res);
       })
-      .catch((err) => {
-        console.log("Error occured in post request: " + err);
+      .catch((error) => {
+        console.log("post: " + error);
+        console.error();
       });
 
     // window.location.reload(true);

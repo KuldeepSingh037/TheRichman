@@ -6,11 +6,13 @@ require("dotenv").config({ path: "./.env" });
 
 const app = express();
 const uri = process.env.ATLAS_URI;
+
+app.use(express());
+// app.use(express.json());
 const port = process.env.PORT || 5000;
 
 app.use(cors());
 
-app.use(express.json());
 app.use("/online-booking", require("./routes/onlineBooking"));
 
 mongoose

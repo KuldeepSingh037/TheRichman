@@ -26,10 +26,11 @@ const future_bookingsSchema = new mongoose.Schema(
       type: Date,
       required: true,
     },
-  },
-  {
-    timestamps: true,
   }
+  // ,
+  // {
+  //   timestamps: true,
+  // }
 );
 
 module.exports = mongoose.model("Booking", future_bookingsSchema);
