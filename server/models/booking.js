@@ -26,9 +26,6 @@ const future_bookingsSchema = new mongoose.Schema(
       type: Date,
       required: true,
     },
-    end_date: {
-      type: String,
-    },
     city: {
       type: String,
     },

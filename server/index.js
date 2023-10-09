@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 
-app.use("/online-booking", require("./routes/booking"));
+app.use("/booking", require("./routes/booking"));
 app.use("/staff", require("./routes/staff"));
 
 mongoose

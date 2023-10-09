@@ -1,6 +1,16 @@
 const router = require("express").Router();
 let Booking = require("../models/booking");
 
+router.get("/view-rooms", async (req, res) => {
+  try {
+    await Booking.find()
+      .then((allBookings) => res.json(allBookings))
+      .catch((err) => res.status(400).json("Error: " + err));
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 router.post("/book-room", async (req, res) => {
   try {
     const data = {
@@ -21,7 +31,7 @@ router.post("/book-room", async (req, res) => {
     const newBooking = await Booking.create(data);
     return res.status(201).send(newBooking);
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
     res.status(500).send({ message: error.message });
   }
 });

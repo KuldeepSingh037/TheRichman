@@ -5,7 +5,7 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import axios from "axios";
 
-class StaffBooking extends Component {
+class StaffNewBooking extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +52,7 @@ class StaffBooking extends Component {
 
     console.log(newBooking);
     axios
-      .post("http://localhost:5000/online-booking/book-room", newBooking, {
+      .post("http://localhost:5000/booking/book-room", newBooking, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -105,7 +105,7 @@ class StaffBooking extends Component {
               <input
                 type="tel"
                 name="mb_no"
-                placeholder="(Country code) Mobile Number"
+                placeholder="10-digit Mobile Number"
                 className="form-control"
                 onChange={this.handleFormDataChange}
                 value={this.state.mb_no}
@@ -187,4 +187,4 @@ class StaffBooking extends Component {
     );
   }
 }
-export default StaffBooking;
+export default StaffNewBooking;

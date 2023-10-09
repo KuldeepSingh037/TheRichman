@@ -8,7 +8,8 @@ import BookRoom from "./Components/BookRoom";
 import InternalHome from "./Components/AtHotel/InternalHome";
 import StaffLogin from "./Components/AtHotel/StaffLogin";
 import StaffHome from "./Components/AtHotel/StaffHome";
-import StaffBooking from "./Components/AtHotel/StaffBooking";
+import StaffUpdateBooking from "./Components/AtHotel/StaffUpdateBooking";
+import StaffBlilling from "./Components/AtHotel/StaffBilling";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
 
           <Route path="/hotel/staff" element={<StaffLogin />}></Route>
           <Route path="/hotel/staff/home" element={<StaffHome />}></Route>
+          <Route
+            path="/hotel/staff/update"
+            element={<StaffUpdateBooking />}
+          ></Route>
+          <Route
+            path="/hotel/staff/billing"
+            element={<StaffBlilling />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

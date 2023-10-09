@@ -53,7 +53,7 @@ class BookRoom extends Component {
 
     try {
       axios
-        .post("http://localhost:5000/online-booking/book-room", newBooking, {
+        .post("http://localhost:5000/booking/book-room", newBooking, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -149,7 +149,7 @@ class BookRoom extends Component {
                   <input
                     type="tel"
                     name="mb_no"
-                    placeholder="(Country code) Mobile number"
+                    placeholder="10-digit Mobile number"
                     onChange={this.handleFormDataChange}
                     value={this.state.mb_no}
                     className="form-control"

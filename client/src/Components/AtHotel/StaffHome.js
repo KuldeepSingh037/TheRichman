@@ -6,7 +6,8 @@ import TabPane from "react-bootstrap/TabPane";
 import NavItem from "react-bootstrap/NavItem";
 import Nav from "react-bootstrap/Nav";
 import NavLink from "react-bootstrap/NavLink";
-import StaffBooking from "./StaffBooking";
+import StaffNewBooking from "./StaffNewBooking";
+import StaffViewBooking from "./StaffViewBooking";
 
 class StaffHome extends Component {
   render() {
@@ -19,7 +20,8 @@ class StaffHome extends Component {
           height: "600px",
         }}
       >
-        <TabContainer defaultActiveKey="book_room">
+        <TabContainer defaultActiveKey="view_update_booking">
+          {/* <TabContainer defaultActiveKey="book_room"> */}
           <div className="d-flex">
             <Nav variant="underline" className="flex-column">
               <NavItem>
@@ -28,25 +30,17 @@ class StaffHome extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink eventKey="view_boking">View Booking</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink eventKey="update_booking">Update Booking</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink eventKey="billing_info">Billing Information</NavLink>
+                <NavLink eventKey="view_update_booking">
+                  Booking Details
+                </NavLink>
               </NavItem>
             </Nav>
             <TabContent>
               <TabPane eventKey="book_room">
-                <StaffBooking />
+                <StaffNewBooking />
               </TabPane>
-              <TabPane eventKey="view_booking">
-                {/* <Housekeeping /> */}
-              </TabPane>
-              <TabPane eventKey="update_booking">{/* <Bookings /> */}</TabPane>
-              <TabPane eventKey="billing_info">
-                {/* <OtherRequests /> */}
+              <TabPane eventKey="view_update_booking">
+                <StaffViewBooking />
               </TabPane>
             </TabContent>
           </div>
