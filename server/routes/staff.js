@@ -1,39 +1,24 @@
 const router = require("express").Router();
 let Staff = require("../models/staff");
 
-router.post("/login", async (request, response) => {
+router.post("/check-login", (req, res) => {
   try {
-    const data = {
-      name: request.body.username,
-      pwd: request.body.pwd,
-    };
+    const { username, pwd } = req.body;
 
-    console.log(data);
-
-    const newLogin = await Staff.create(data);
-    return response.status(201).send(newLogin);
-  } catch (error) {
-    console.log(error.message);
-    response.status(500).send({ message: error.message });
-  }
-});
-
-router.get("/check-login", async (request, response) => {
-  try {
-    const data = {
-      name: request.body.username,
-      pwd: request.body.pwd,
-    };
-    console.log(data);
-
-    Staff.find(data).then((res) => {
-      console.log("data found");
-      console.log(res);
-      return response.status(201).send("Data found");
+    Staff.findOne({ username: username }).then((user) => {
+      if (user) {
+        if (user.pwd === pwd) {
+          res.sendStatus(200);
+        } else {
+          res.send("Wrong");
+        }
+      } else {
+        res.send("User not registered");
+      }
     });
   } catch (error) {
     console.log(error.message);
-    response.status(500).send({ message: error.message });
+    res.status(500).send({ message: error.message });
   }
 });
 

@@ -16,7 +16,7 @@ class Navigationbar extends Component {
                 alt="logo"
                 height="100px"
                 width="200px"
-                src="The_Richman_Hotel.png"
+                src={require("./static/logo.jpg")}
               />
             </Navbar.Brand>
           </Col>

@@ -1,9 +1,9 @@
 import { React, Component } from "react";
-import Container from "react-bootstrap/esm/Container";
+import Container from "react-bootstrap/Container";
 
 import TabPane from "react-bootstrap/TabPane";
 import TabContainer from "react-bootstrap/TabContainer";
-import TabContent from "react-bootstrap/esm/TabContent";
+import TabContent from "react-bootstrap/TabContent";
 import Nav from "react-bootstrap/Nav";
 import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
@@ -15,7 +15,12 @@ import OtherRequests from "./OtherRequests";
 class HotelServices extends Component {
   render() {
     return (
-      <Container>
+      <Container
+        style={{
+          borderRadius: "20px",
+          border: "1px solid black",
+        }}
+      >
         <TabContainer defaultActiveKey="order_food">
           <div className="d-flex">
             <Nav variant="underline" className="flex-column">

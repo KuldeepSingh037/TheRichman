@@ -18,7 +18,7 @@ class InternalHome extends Component {
                   alt="logo"
                   height="150px"
                   width="300px"
-                  src="../The_Richman_Hotel.png"
+                  src={require("../static/logo.jpg")}
                 />
               </NavLink>
             </Col>

@@ -50,19 +50,24 @@ class BookRoom extends Component {
     };
 
     console.log(newBooking);
-    axios
-      .post("http://localhost:5000/online-booking/book-room", newBooking, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then(() => {
-        window.location.reload(true);
-      })
-      .catch((error) => {
-        console.log("post: " + error);
-        console.error();
-      });
+
+    try {
+      axios
+        .post("http://localhost:5000/online-booking/book-room", newBooking, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then(() => {
+          window.location.reload(true);
+        })
+        .catch((error) => {
+          console.log("post: " + error);
+          console.error();
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   handleFormDataChange(e) {

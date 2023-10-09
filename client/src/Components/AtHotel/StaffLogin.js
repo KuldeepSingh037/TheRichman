@@ -1,8 +1,9 @@
 import { React, Component } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import Container from "react-bootstrap/Container";
 import { NavLink } from "react-bootstrap";
+import axios from "axios";
 
 class StaffLogin extends Component {
   constructor(props) {
@@ -22,56 +23,80 @@ class StaffLogin extends Component {
 
   handleFormSubmission(e) {
     e.preventDefault();
-    const user = {
+    const newUser = {
       username: this.state.username,
       pwd: this.state.pwd,
     };
-    console.log(user);
-    window.location="/hotel/staff-booking"
+    console.log(newUser);
+
+    try {
+      axios
+        .post("http://localhost:5000/staff/check-login", newUser)
+        .then((res) => {
+          console.log(res.status);
+          console.log(res.data);
+          window.location = "/hotel/staff/home";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
     return (
-      <Container style={{ paddingTop: "200px" }}>
+      <Container fluid>
         <Row>
           <NavLink href="/">
-            <img alt="logo" height="150px" width="300px" src="/" />
+            <img
+              alt="logo"
+              height="150px"
+              width="300px"
+              src={require("../static/logo.jpg")}
+            />
           </NavLink>
         </Row>
         <Row>
-          <p style={{ fontFamily: "Times New Roman", fontSize: "xx-large" }}>
-            Welcome
-          </p>
-        </Row>
-        <Row>
-          <form onSubmit={this.handleFormSubmission} className="book-room-form">
-            <input
-              onChange={this.handleFormDataChange}
-              type="text"
-              name="username"
-              placeholder="user id"
-              value={this.state.username}
-              className="form-control"
-              // required
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="password"
-              onChange={this.handleFormDataChange}
-              name="pwd"
-              className="form-control"
-              // required
-            />
-            <br />
-            <button
-              className="btn btn-success form-control"
-              type="submit"
-              value="login"
+          <Col></Col>
+          <Col>
+            <p style={{ fontFamily: "Times New Roman", fontSize: "xx-large" }}>
+              Welcome{" "}
+            </p>
+            <form
+              onSubmit={this.handleFormSubmission}
+              className="book-room-form"
             >
-              Login
-            </button>
-          </form>
+              <input
+                onChange={this.handleFormDataChange}
+                type="text"
+                name="username"
+                placeholder="user id"
+                value={this.state.username}
+                className="form-control"
+                // required
+              />
+              <br />
+              <input
+                type="password"
+                placeholder="password"
+                onChange={this.handleFormDataChange}
+                name="pwd"
+                className="form-control"
+                // required
+              />
+              <br />
+              <button
+                className="btn btn-success form-control"
+                type="submit"
+                value="login"
+              >
+                Login
+              </button>
+            </form>
+          </Col>
+          <Col></Col>
         </Row>
       </Container>
     );

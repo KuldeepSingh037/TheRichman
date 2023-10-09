@@ -58,6 +58,7 @@ class StaffBooking extends Component {
         },
       })
       .then(() => {
+        // pop up notification and reload
         window.location.reload(true);
       })
       .catch((error) => {
@@ -78,18 +79,10 @@ class StaffBooking extends Component {
     };
 
     return (
-      <Container>
-        <h1>Customer Registration</h1>{" "}
-        <Row style={{ paddingTop: "70px" }}>
-          <Col>
-            <DateRange
-              ranges={[selectionRange]}
-              onChange={this.handleDateChange}
-              minDate={new Date()}
-            />
-          </Col>
-          <Col>
-            <form onSubmit={this.handleFormSubmission}>
+      <Container fluid>
+        <form onSubmit={this.handleFormSubmission}>
+          <Row style={{ paddingTop: "60px", marginLeft: "200px" }}>
+            <Col>
               <input
                 type="text"
                 name="name"
@@ -167,8 +160,16 @@ class StaffBooking extends Component {
                 value={this.state.no_of_rooms}
                 required
               />
-              <br />
+            </Col>
+            <Col>
+              <DateRange
+                ranges={[selectionRange]}
+                onChange={this.handleDateChange}
+                minDate={new Date()}
+              />
               <textarea
+                style={{ paddingTop: "15px" }}
+                rows={3}
                 name="requirements"
                 placeholder="Additional Requirements"
                 className="form-control"
@@ -179,9 +180,9 @@ class StaffBooking extends Component {
               <button className="btn btn-success form-control" type="submit">
                 Book Room
               </button>
-            </form>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </form>
       </Container>
     );
   }
