@@ -26,11 +26,22 @@ const future_bookingsSchema = new mongoose.Schema(
       type: Date,
       required: true,
     },
+    end_date: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    id_details: {
+      type: String,
+    },
+    requirements: {
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
   }
-  // ,
-  // {
-  //   timestamps: true,
-  // }
 );
 
 module.exports = mongoose.model("Booking", future_bookingsSchema);

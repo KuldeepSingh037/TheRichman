@@ -6,6 +6,8 @@ import Rooms from "./Components/Rooms";
 import Gallery from "./Components/Gallery";
 import BookRoom from "./Components/BookRoom";
 import InternalHome from "./Components/AtHotel/InternalHome";
+import StaffLogin from "./Components/AtHotel/StaffLogin";
+import StaffBooking from "./Components/AtHotel/StaffBooking";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
           <Route path="/dining" element={<Dining />}></Route>
           <Route path="/book-room" element={<BookRoom />}></Route>
           <Route path="/hotel" element={<InternalHome />}></Route>
+          <Route path="/hotel" element={<InternalHome />}></Route>
+          <Route path="/hotel/staff" element={<StaffLogin />}></Route>
+          <Route path="/hotel/staff-booking" element={<StaffBooking />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

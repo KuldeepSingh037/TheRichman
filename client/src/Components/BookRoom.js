@@ -43,6 +43,10 @@ class BookRoom extends Component {
       mb_no: this.state.mb_no,
       start_date: this.state.start_date,
       end_date: this.state.end_date,
+      email: "",
+      city: "",
+      id_details: "",
+      requirements: "",
     };
 
     console.log(newBooking);
@@ -52,11 +56,13 @@ class BookRoom extends Component {
           "Content-Type": "application/json",
         },
       })
+      .then(() => {
+        window.location.reload(true);
+      })
       .catch((error) => {
         console.log("post: " + error);
         console.error();
       });
-    window.location.reload(true);
   }
 
   handleFormDataChange(e) {
@@ -124,7 +130,7 @@ class BookRoom extends Component {
                   </select>
                   <br />
                   <input
-                    type="text"
+                    type="number"
                     name="no_of_rooms"
                     placeholder="Number of Rooms"
                     onChange={this.handleFormDataChange}
@@ -136,9 +142,9 @@ class BookRoom extends Component {
                   />
                   <br />
                   <input
-                    type="text"
+                    type="tel"
                     name="mb_no"
-                    placeholder="Mobile Number"
+                    placeholder="(Country code) Mobile number"
                     onChange={this.handleFormDataChange}
                     value={this.state.mb_no}
                     className="form-control"
