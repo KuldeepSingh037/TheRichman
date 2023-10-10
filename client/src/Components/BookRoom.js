@@ -8,7 +8,7 @@ import { DateRange } from "react-date-range";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import Navigationbar from "./Navigationbar";
+import NavigationBar from "./NavigationBar";
 
 class BookRoom extends Component {
   constructor(props) {
@@ -83,7 +83,7 @@ class BookRoom extends Component {
 
     return (
       <div className="book-room-main">
-        <Navigationbar />
+        <NavigationBar />
 
         <p>Book Room</p>
 

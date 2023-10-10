@@ -2,8 +2,8 @@ import { React, Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
 import Container from "react-bootstrap/Container";
-import { NavLink } from "react-bootstrap";
 import axios from "axios";
+import StaffNavigationBar from "./StaffNavigationBar";
 
 class StaffLogin extends Component {
   constructor(props) {
@@ -33,9 +33,10 @@ class StaffLogin extends Component {
       axios
         .post("http://localhost:5000/staff/check-login", newUser)
         .then((res) => {
-          console.log(res.status);
-          console.log(res.data);
-          window.location = "/hotel/staff/home";
+          // correct pwd
+          if (res.data === "OK") window.location = "/hotel/staff/home";
+          // wrong pwd
+          else window.location = "/hotel/staff";
         })
         .catch((error) => {
           console.log(error);
@@ -49,41 +50,35 @@ class StaffLogin extends Component {
     return (
       <Container fluid>
         <Row>
-          <NavLink href="/">
-            <img
-              alt="logo"
-              height="150px"
-              width="300px"
-              src={require("../static/logo.jpg")}
-            />
-          </NavLink>
+          <StaffNavigationBar />
         </Row>
         <Row>
           <Col></Col>
           <Col>
             <p style={{ fontFamily: "Times New Roman", fontSize: "xx-large" }}>
-              Welcome{" "}
+              Welcome
             </p>
             <form
               onSubmit={this.handleFormSubmission}
               className="book-room-form"
             >
               <input
-                onChange={this.handleFormDataChange}
-                type="text"
                 name="username"
+                type="text"
                 placeholder="user id"
                 value={this.state.username}
                 className="form-control"
+                onChange={this.handleFormDataChange}
                 // required
               />
               <br />
               <input
+                name="pwd"
                 type="password"
                 placeholder="password"
-                onChange={this.handleFormDataChange}
-                name="pwd"
+                value={this.state.pwd}
                 className="form-control"
+                onChange={this.handleFormDataChange}
                 // required
               />
               <br />

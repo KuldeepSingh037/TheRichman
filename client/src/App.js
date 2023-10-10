@@ -9,7 +9,7 @@ import InternalHome from "./Components/AtHotel/InternalHome";
 import StaffLogin from "./Components/AtHotel/StaffLogin";
 import StaffHome from "./Components/AtHotel/StaffHome";
 import StaffUpdateBooking from "./Components/AtHotel/StaffUpdateBooking";
-import StaffBlilling from "./Components/AtHotel/StaffBilling";
+import StaffViewBilling from "./Components/AtHotel/StaffViewBilling";
 
 function App() {
   return (
@@ -26,12 +26,12 @@ function App() {
           <Route path="/hotel/staff" element={<StaffLogin />}></Route>
           <Route path="/hotel/staff/home" element={<StaffHome />}></Route>
           <Route
-            path="/hotel/staff/update"
+            path="/hotel/staff/update/:id"
             element={<StaffUpdateBooking />}
           ></Route>
           <Route
             path="/hotel/staff/billing"
-            element={<StaffBlilling />}
+            element={<StaffViewBilling />}
           ></Route>
         </Routes>
       </BrowserRouter>

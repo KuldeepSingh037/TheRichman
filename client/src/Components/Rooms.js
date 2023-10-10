@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import Navigationbar from "./Navigationbar";
+import NavigationBar from "./NavigationBar";
 
 class Rooms extends Component {
   render() {
     return (
       <div>
-        <Navigationbar />
+        <NavigationBar />
         <p>This is Rooms Page.</p>;
       </div>
     );

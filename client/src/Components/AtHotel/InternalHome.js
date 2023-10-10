@@ -5,6 +5,7 @@ import HotelServices from "./HotelServices";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import NavLink from "react-bootstrap/NavLink";
+import StaffNavigationBar from "./StaffNavigationBar";
 
 class InternalHome extends Component {
   render() {
@@ -13,14 +14,15 @@ class InternalHome extends Component {
         <Container fluid>
           <Row>
             <Col>
-              <NavLink href="/">
+              {/* <NavLink href="/">
                 <img
                   alt="logo"
                   height="150px"
                   width="300px"
                   src={require("../static/logo.jpg")}
                 />
-              </NavLink>
+              </NavLink> */}
+              <StaffNavigationBar />
             </Col>
             <Col>
               <NavLink className="hotel-staff" href="/hotel/staff">

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navigationbar from "./Navigationbar";
+import NavigationBar from "./NavigationBar";
 
 import "./css/Home.css";
 
@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home-body">
-        <Navigationbar />
+        <NavigationBar />
         <div className="home-content">
           <p>This is Home Page.</p>
         </div>

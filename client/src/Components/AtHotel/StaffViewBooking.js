@@ -77,8 +77,9 @@ class StaffViewBooking extends Component {
                     </Col>
                     <Col>
                       <Row>
-                        <NavLink href="/hotel/staff/update">
-                          {" "}
+                        <NavLink
+                          href={"/hotel/staff/update/" + eachBooking._id}
+                        >
                           Update details
                         </NavLink>
                       </Row>

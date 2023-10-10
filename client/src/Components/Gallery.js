@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import Navigationbar from "./Navigationbar";
+import NavigationBar from "./NavigationBar";
 
 class Gallery extends Component {
   render() {
     return (
       <div>
-        <Navigationbar />
+        <NavigationBar />
         <p> This is Gallery Page.</p>
       </div>
     );

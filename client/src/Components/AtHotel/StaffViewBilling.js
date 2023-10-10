@@ -2,7 +2,7 @@ import { React, Component } from "react";
 
 import Container from "react-bootstrap/Container";
 
-class StaffBlilling extends Component {
+class StaffViewBlilling extends Component {
   render() {
     return (
       <Container>
@@ -12,4 +12,4 @@ class StaffBlilling extends Component {
   }
 }
 
-export default StaffBlilling;
+export default StaffViewBlilling;
