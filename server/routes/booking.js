@@ -36,47 +36,18 @@ router.post("/book-room", async (req, res) => {
   }
 });
 
-router.get("update/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    console.log(req.params.id);
     await Booking.findById(req.params.id)
       .then((data) => {
-        console.log(data);
         res.json(data);
       })
       .catch((error) => {
-        console.log(error);
         res.status(400).json("Error: " + error);
       });
   } catch (error) {
-    console.log(error);
     res.status(500).send({ message: error.message });
   }
 });
-
-// router.post("/update/:id", async (req, res) => {
-//   try {
-//     const data = {
-//       name: req.body.name,
-//       room_type: Number(req.body.room_type),
-//       no_of_rooms: Number(req.body.no_of_rooms),
-//       mb_no: req.body.mb_no,
-//       start_date: Date.parse(req.body.start_date),
-//       end_date: Date.parse(req.body.end_date),
-//       email: req.body.email,
-//       city: req.body.city,
-//       id_details: req.body.id_details,
-//       requirements: req.body.requirements,
-//     };
-
-//     console.log("data: " + data);
-//     const updatedBooking = Booking.findByIdAndUpdate(req.params.id, data, {
-//       new: true,
-//     });
-//     console.log("updated: " + updatedBooking);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 
 module.exports = router;

@@ -5,3 +5,8 @@
   /* padding-top: 150px; */
   /* border: 1px solid black; */
 }
+#marquee-img {
+  max-width: 400px;
+  height: 250px;
+  border: 1px solid black;
+}
