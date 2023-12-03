@@ -1,5 +1,5 @@
 .hotel-home {
-  padding-top: 70px;  
+  padding-top: 70px;
 }
 .hotel-staff {
   /* border: 1px solid black; */
@@ -11,4 +11,8 @@
   font-weight: 600;
   text-decoration: underline;
   color: rgb(124, 213, 80);
+}
+#service-text {
+  margin-top: "20px";
+  margin-left: "20px";
 }

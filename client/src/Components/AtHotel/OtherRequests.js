@@ -8,16 +8,11 @@ class OtherRequests extends Component {
       request: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    window.location.reload="true";
+    // window.location.reload = "true";
   }
 
   render() {
@@ -30,7 +25,9 @@ class OtherRequests extends Component {
             placeholder="Requests"
             name="requests"
             value={this.state.request}
-            onChange={this.handleChange}
+            onChange={(e) => {
+              this.setState({ request: e.target.value });
+            }}
             className="form-control"
           />
           <button type="submit" className="btn btn-success">

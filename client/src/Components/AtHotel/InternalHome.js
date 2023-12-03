@@ -14,14 +14,6 @@ class InternalHome extends Component {
         <Container fluid>
           <Row>
             <Col>
-              {/* <NavLink href="/">
-                <img
-                  alt="logo"
-                  height="150px"
-                  width="300px"
-                  src={require("../static/logo.jpg")}
-                />
-              </NavLink> */}
               <StaffNavigationBar />
             </Col>
             <Col>

@@ -7,6 +7,8 @@ import Nav from "react-bootstrap/Nav";
 import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
 
+import "./css/InternalHome.css";
+
 class FoodOrder extends Component {
   constructor(props) {
     super(props);
@@ -42,29 +44,30 @@ class FoodOrder extends Component {
     ];
     const dessert = ["Dessert 1", "Dessert 2", "Dessert 3", "Dessert 4"];
 
-    const FoodDisplay = (props) => {
-      props.items.map((item) => {
-        console.log(item);
-        return (
-          <label key={item}>
-            <input
-              type="checkbox"
-              value={item}
-              checked={this.state.foodItems.includes(item)}
-              onChange={this.handleChange}
-            />
-            {item}
-          </label>
-        );
-      });
-    };
+    // const FoodDisplay = (props) => {
+    //   props.items.map((item) => {
+    //     return (
+    //       <>
+    //         <input
+    //           type="checkbox"
+    //           key={item}
+    //           value={item}
+    //           checked={this.state.foodItems.includes(item)}
+    //           onChange={this.handleChange}
+    //         />
+    //         {item}
+    //         <br />
+    //       </>
+    //     );
+    //   });
+    // };
 
     return (
       <TabContainer defaultActiveKey="starter">
         <div className="d-flex">
           <Nav variant="underline" className="flex-column">
             <NavItem>
-              <NavLink style={{ width: "200px" }} eventKey="starter">
+              <NavLink style={{ width: "120px" }} eventKey="starter">
                 Starters
               </NavLink>
               <NavLink eventKey="side_dish">Side Dishes</NavLink>
@@ -75,32 +78,79 @@ class FoodOrder extends Component {
           <TabContent>
             <TabPane eventKey="starter">
               <form>
-                <FoodDisplay items={starter} />
+                {/* <FoodDisplay items={starter} /> */}
+                {starter.map((item) => {
+                  return (
+                    <>
+                      <input
+                        key={item}
+                        type="checkbox"
+                        value={item}
+                        checked={this.state.foodItems.includes(item)}
+                        onChange={this.handleChange}
+                      />
+                      {" " + item}
+                      <br />
+                    </>
+                  );
+                })}
               </form>
             </TabPane>
             <TabPane eventKey="side_dish">
               <form>
-                <FoodDisplay items={side_dish} />
+                {/* <FoodDisplay items={side_dish} /> */}
+                {side_dish.map((item) => {
+                  return (
+                    <>
+                      <input
+                        type="checkbox"
+                        key={item}
+                        value={item}
+                        checked={this.state.foodItems.includes(item)}
+                        onChange={this.handleChange}
+                      />
+                      {" " + item}
+                      <br />
+                    </>
+                  );
+                })}
               </form>
             </TabPane>
             <TabPane eventKey="main_course">
               <form>
-                <FoodDisplay items={main_course} />
+                {/* <FoodDisplay items={main_course} /> */}
+                {main_course.map((item) => {
+                  return (
+                    <>
+                      <input
+                        type="checkbox"
+                        key={item}
+                        value={item}
+                        checked={this.state.foodItems.includes(item)}
+                        onChange={this.handleChange}
+                      />
+                      {" " + item}
+                      <br />
+                    </>
+                  );
+                })}
               </form>
             </TabPane>
             <TabPane eventKey="dessert">
               <form>
                 {dessert.map((item) => {
                   return (
-                    <label key={item}>
+                    <>
                       <input
                         type="checkbox"
+                        key={item}
                         value={item}
                         checked={this.state.foodItems.includes(item)}
                         onChange={this.handleChange}
                       />
-                      {item}
-                    </label>
+                      {" " + item}
+                      <br />
+                    </>
                   );
                 })}
               </form>

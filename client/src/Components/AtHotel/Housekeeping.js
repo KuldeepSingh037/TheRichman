@@ -8,7 +8,43 @@ import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
 
 class Housekeeping extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mb_no: "",
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    // window.location.reload = "true";
+  }
+
   render() {
+    const CleaningForm = () => {
+      return (
+        <form
+          style={{ marginTop: "20px", marginLeft: "50px" }}
+          onSubmit={this.handleSubmit}
+        >
+          <input
+            type="tel"
+            name="mb_no"
+            className="form-control"
+            value={this.state.mb_no}
+            onChange={(e) => {
+              this.setState({ mb_no: e.target.value });
+            }}
+          />
+          <label>Please enter your Mobile Number</label>
+          <br />
+          <br />
+          <input type="submit" className="btn btn-success" value="Get OTP" />
+        </form>
+      );
+    };
+
     return (
       <TabContainer defaultActiveKey="room_cleaning">
         <div className="d-flex">
@@ -22,8 +58,12 @@ class Housekeeping extends Component {
           </Nav>
 
           <TabContent>
-            <TabPane eventKey="room_cleaning">Clean Room</TabPane>
-            <TabPane eventKey="laundry">Laundry</TabPane>
+            <TabPane eventKey="room_cleaning">
+              <CleaningForm />
+            </TabPane>
+            <TabPane eventKey="laundry">
+              <CleaningForm />
+            </TabPane>
           </TabContent>
         </div>
       </TabContainer>

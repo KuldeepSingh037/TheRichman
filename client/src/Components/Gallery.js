@@ -15,7 +15,6 @@ class Gallery extends Component {
           <Row>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/1.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -23,7 +22,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/2.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -31,7 +29,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/18.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -41,7 +38,6 @@ class Gallery extends Component {
           <Row>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/3.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -49,7 +45,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/4.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -57,7 +52,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/5.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -82,7 +76,6 @@ class Gallery extends Component {
           <Row>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/6.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -90,7 +83,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/7.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -98,7 +90,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/8.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -108,7 +99,6 @@ class Gallery extends Component {
           <Row>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/9.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -116,7 +106,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/10.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -124,7 +113,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/11.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -149,7 +137,6 @@ class Gallery extends Component {
           <Row>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/12.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -157,7 +144,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/13.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -165,7 +151,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/14.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -175,7 +160,6 @@ class Gallery extends Component {
           <Row>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/15.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -183,7 +167,6 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/16.jpg")}
                 id="marquee-img"
                 vspace="50"
@@ -191,101 +174,7 @@ class Gallery extends Component {
             </Col>
             <Col>
               <img
-                alt="image"
                 src={require("./static/gallery/17.jpeg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p
-                style={{
-                  textAlign: "center",
-                  fontSize: "60px",
-                  fontFamily: "Lucida Calligraphy",
-                  color: "rgb(130, 9, 99)",
-                  opacity: "0.4",
-                }}
-              >
-                Food
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/19.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/20.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/21.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/22.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/23.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/24.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/25.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/26.jpg")}
-                id="marquee-img"
-                vspace="50"
-              />
-            </Col>
-            <Col>
-              <img
-                alt="image"
-                src={require("./static/gallery/27.jpg")}
                 id="marquee-img"
                 vspace="50"
               />
