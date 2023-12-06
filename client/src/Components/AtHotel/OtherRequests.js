@@ -18,19 +18,26 @@ class OtherRequests extends Component {
   render() {
     return (
       <Container>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} style={{ marginTop: "20px" }}>
           <textarea
             type="text"
             required
             placeholder="Requests"
             name="requests"
             value={this.state.request}
+            cols="30"
+            rows="4"
             onChange={(e) => {
               this.setState({ request: e.target.value });
             }}
             className="form-control"
           />
-          <button type="submit" className="btn btn-success">
+          <br />
+          <button
+            style={{ alignContent: "right", fontWeight: "bold" }}
+            type="submit"
+            className="btn btn-success"
+          >
             Submit Request
           </button>
         </form>

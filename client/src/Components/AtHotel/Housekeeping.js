@@ -13,38 +13,52 @@ class Housekeeping extends Component {
     this.state = {
       mb_no: "",
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.cleanginForm = this.cleanginForm.bind(this);
+    this.bookSomething = this.bookSomething.bind(this);
+    this.handleFormDataSubmit = this.handleFormDataSubmit.bind(this);
   }
 
-  handleSubmit(e) {
+  handleFormDataSubmit(e) {
     e.preventDefault();
     // window.location.reload = "true";
   }
 
-  render() {
-    const CleaningForm = () => {
-      return (
-        <form
-          style={{ marginTop: "20px", marginLeft: "50px" }}
-          onSubmit={this.handleSubmit}
-        >
-          <input
-            type="tel"
-            name="mb_no"
-            className="form-control"
-            value={this.state.mb_no}
-            onChange={(e) => {
-              this.setState({ mb_no: e.target.value });
-            }}
-          />
-          <label>Please enter your Mobile Number</label>
-          <br />
-          <br />
-          <input type="submit" className="btn btn-success" value="Get OTP" />
-        </form>
-      );
-    };
+  bookSomething(bookIt) {
+    console.log(bookIt);
+    // return bookIt;
+  }
 
+  cleanginForm(bookMe) {
+    return (
+      <form
+        style={{ marginTop: "20px", marginLeft: "50px" }}
+        onSubmit={this.handleFormDataSubmit}
+      >
+        <input
+          type="tel"
+          name="mb_no"
+          className="form-control"
+          value={this.state.mb_no}
+          placeholder="Please enter your Mobile Number"
+          onChange={(e) => {
+            this.setState({ mb_no: e.target.value });
+          }}
+        />
+        <br />
+        <button
+          className="btn btn-success form-control"
+          type="submit"
+          name="bookMe"
+          value="Confirm booking"
+          onClick={this.bookSomething(bookMe)}
+        >
+          Get OTP
+        </button>
+      </form>
+    );
+  }
+
+  render() {
     return (
       <TabContainer defaultActiveKey="room_cleaning">
         <div className="d-flex">
@@ -59,11 +73,9 @@ class Housekeeping extends Component {
 
           <TabContent>
             <TabPane eventKey="room_cleaning">
-              <CleaningForm />
+              {this.cleanginForm("room_cleaning")}
             </TabPane>
-            <TabPane eventKey="laundry">
-              <CleaningForm />
-            </TabPane>
+            <TabPane eventKey="laundry">{this.cleanginForm("laundry")}</TabPane>
           </TabContent>
         </div>
       </TabContainer>

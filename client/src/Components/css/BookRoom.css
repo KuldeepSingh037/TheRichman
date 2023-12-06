@@ -1,10 +1,11 @@
 .book-room-main {
   font-size: larger;
   height: 794px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .book-room-details {
   width: 1000px;
+  margin-top: 100px;
   /* border: 1px solid black; */
 }
 .book-room-date-range {

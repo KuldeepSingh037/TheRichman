@@ -8,13 +8,63 @@ import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
 
 class Bookings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      members: "",
+    };
+    this.bookSomething = this.bookSomething.bind(this);
+    this.bookingForm = this.bookingForm.bind(this);
+    this.handleFormSubmission = this.handleFormSubmission.bind(this);
+  }
+
+  bookSomething(bookIt) {
+    console.log(bookIt);
+    // return bookIt;
+  }
+
+  bookingForm(bookMe) {
+    return (
+      <form
+        style={{ marginTop: "20px", marginLeft: "50px" }}
+        onSubmit={this.handleFormSubmission}
+      >
+        <input
+          type="number"
+          onChange={(e) => {
+            this.setState({ members: e.target.value });
+          }}
+          name="members"
+          placeholder="No of people"
+          value={this.state.members}
+          className="form-control"
+          required
+        />
+        <br />
+        <button
+          className="btn btn-success form-control"
+          type="submit"
+          name="bookMe"
+          value="Confirm booking"
+          onClick={this.bookSomething(bookMe)}
+        >
+          Confirm Booking
+        </button>
+      </form>
+    );
+  }
+
+  handleFormSubmission(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <TabContainer defaultActiveKey="book_spa">
         <div className="d-flex">
           <Nav variant="underline" className="flex-column">
             <NavItem>
-              <NavLink style={{ width: "200px" }} eventKey="book_spa">
+              <NavLink style={{ width: "160px" }} eventKey="book_spa">
                 Spa Booking
               </NavLink>
               <NavLink eventKey="book_saloon">Hair Dressing</NavLink>
@@ -25,11 +75,21 @@ class Bookings extends Component {
           </Nav>
 
           <TabContent>
-            <TabPane eventKey="book_spa">Spa Booking</TabPane>
-            <TabPane eventKey="book_saloon">Hair Dressing</TabPane>
-            <TabPane eventKey="book_room">Meeting Facility</TabPane>
-            <TabPane eventKey="book_tour">Tours and Excursions</TabPane>
-            <TabPane eventKey="book_vehicle">Pickup / Drop</TabPane>
+            <TabPane eventKey="book_spa">
+              {this.bookingForm("book_spa")}
+            </TabPane>
+            <TabPane eventKey="book_saloon">
+              {this.bookingForm("book_saloon")}
+            </TabPane>
+            <TabPane eventKey="book_room">
+              {this.bookingForm("book_room")}
+            </TabPane>
+            <TabPane eventKey="book_tour">
+              {this.bookingForm("book_room")}
+            </TabPane>
+            <TabPane eventKey="book_vehicle">
+              {this.bookingForm("book_room")}
+            </TabPane>
           </TabContent>
         </div>
       </TabContainer>

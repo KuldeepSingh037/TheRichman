@@ -21,7 +21,7 @@ class HotelServices extends Component {
           border: "1px solid black",
         }}
       >
-        <TabContainer defaultActiveKey="housekeeping">
+        <TabContainer defaultActiveKey="other_requests">
           <div className="d-flex">
             <Nav variant="underline" className="flex-column">
               <NavItem>

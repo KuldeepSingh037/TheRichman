@@ -4,7 +4,6 @@ import NavigationBar from "./NavigationBar";
 import "./css/Home.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 class Home extends Component {
   render() {
@@ -133,9 +132,10 @@ class Home extends Component {
                 fontSize: "30px",
                 fontFamily: "Lucida Calligraphy",
               }}
-              scrollamount="11"
             >
               Address : XYZ area, Udaipur, Rajasthan, Bharat - 313001
+              <br />
+              <br />
             </div>
           </Container>
         </div>

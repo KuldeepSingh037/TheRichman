@@ -85,8 +85,6 @@ class BookRoom extends Component {
       <div className="book-room-main">
         <NavigationBar />
 
-        <p>Book Room</p>
-
         <Container className="book-room-details">
           <Row>
             <Col>
@@ -98,7 +96,14 @@ class BookRoom extends Component {
               />
             </Col>
             <Col className="book-room-pd">
-              <Row>Please fill out the details</Row>
+              <Row
+                style={{
+                  //  border: "1px solid black",
+                  fontSize: "30px",
+                }}
+              >
+                <div>Please fill out the details</div>
+              </Row>
               <Row>
                 <form
                   onSubmit={this.handleFormSubmission}
@@ -141,8 +146,8 @@ class BookRoom extends Component {
                     onChange={this.handleFormDataChange}
                     value={this.state.no_of_rooms}
                     className="form-control"
-                    // maxLength="2"
-                    // minLength="1"
+                    maxLength="1"
+                    minLength="1"
                     required
                   />
                   <br />
